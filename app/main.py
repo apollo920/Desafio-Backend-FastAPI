@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from app.database import Base, engine
 from app.routers import formulario, pergunta
 
+
 app = FastAPI(title="Formulários Dinâmicos API")
 
 app.include_router(formulario.router, prefix="/formularios", tags=["Formulários"])

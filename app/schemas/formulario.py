@@ -10,7 +10,6 @@ class FormularioCreate(FormularioBase):
 
 class FormularioOut(FormularioBase):
     id: int
-    criado_em: datetime
 
     class Config:
         orm_mode = True
