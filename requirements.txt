@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+
+# ORM e banco de dados
+SQLAlchemy
+psycopg2-binary
+
+# Validação e tipos
+pydantic-settings
+python-dotenv
+
+# (Opcional) Migrations
+alembic

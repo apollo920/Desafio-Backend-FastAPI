@@ -1,0 +1,48 @@
+# Virtual environment
+venv/
+.env
+
+
+# VSCode settings
+.vscode/
+
+# Database
+*.sqlite3
+
+# Alembic
+alembic.ini
+alembic/versions/*.pyc
+alembic/versions/*.pyo
+alembic/versions/__pycache__/
+
+# Pytest cache
+.pytest_cache/
+.cache/
+
+# Logs
+*.log
+
+# MyPy
+.mypy_cache/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Editor swap files
+*.swp
+*.swo
+*~
+
+# Local DB dump
+*.dump
+*.sql
+
+# Jupyter / IPython
+.ipynb_checkpoints/
