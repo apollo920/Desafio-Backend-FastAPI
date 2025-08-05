@@ -15,6 +15,7 @@ class Pergunta(Base):
     tipo = Column(String, index=True)
 
     formulario_id = Column(Integer, ForeignKey("formularios.id"), nullable=False)
-    formulario = relationship("Formulario", back_populates="pergunta")
+    formulario = relationship("Formulario", back_populates="perguntas")
 
     opcoes = relationship("OpcaoResposta", back_populates="pergunta", cascade="all, delete-orphan")
+    opcoes_relacionadas = relationship("OpcaoRespostaPergunta", back_populates="pergunta", cascade="all, delete-orphan")

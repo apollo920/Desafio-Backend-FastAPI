@@ -7,11 +7,10 @@ class OpcaoRespostaBase(BaseModel):
     resposta_aberta: Optional[bool] = False
 
 class OpcaoRespostaCreate(OpcaoRespostaBase):
-    id_pergunta: int
+    pass
 
 class OpcaoRespostaOut(OpcaoRespostaBase):
     id: int
-    id_pergunta: int
 
     class Config:
         orm_mode = True

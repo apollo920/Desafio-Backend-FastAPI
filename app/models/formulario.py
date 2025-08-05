@@ -1,6 +1,6 @@
-from sqlalchemy import Column, Integer, String, DateTime, func
-from app.database import Base
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
+from app.database import Base
 
 class Formulario(Base):
     __tablename__ = "formularios"
@@ -10,4 +10,4 @@ class Formulario(Base):
     descricao = Column(String)
     ordem = Column(Integer)
 
-    pergunta = relationship("Pergunta", back_populates="formulario", cascade="all, delete-orphan")
+    perguntas = relationship("Pergunta", back_populates="formulario", cascade="all, delete-orphan")

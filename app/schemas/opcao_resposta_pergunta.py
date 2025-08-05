@@ -1,14 +1,14 @@
 from pydantic import BaseModel
+from typing import Optional
 
-class OpcaoRespostaPerguntaBase(BaseModel):
-    id_opcao_resposta: int
-    id_pergunta: int
+class OpcaoRespostaPerguntaCreate(BaseModel):
+    opcao_resposta_id: int
+    pergunta_id: int
 
-class OpcaoRespostaPerguntaCreate(OpcaoRespostaPerguntaBase):
-    pass
-
-class OpcaoRespostaPerguntaOut(OpcaoRespostaPerguntaBase):
+class OpcaoRespostaPerguntaOut(BaseModel):
     id: int
+    opcao_resposta_id: int
+    pergunta_id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True 

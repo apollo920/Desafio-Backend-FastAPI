@@ -5,11 +5,8 @@ from typing import Optional, List
 from app.database import SessionLocal
 from app.schemas import pergunta as schemas
 from app.models import pergunta as models
-from app.models.formulario import Formulario
-from app.models.opcao_resposta import OpcaoResposta
-from app.models.formulario import Formulario
-from app.models.formulario import Formulario
-
+from app.schemas.pergunta import PerguntaComOpcoes
+from app.models.pergunta import Pergunta
 
 router = APIRouter(
     prefix="/pergunta",
@@ -34,10 +31,10 @@ def criar_pergunta(pergunta: schemas.PerguntaCreate, db: Session = Depends(get_d
     db.refresh(nova)
     return nova
 
-@router.get("/formulario/{formulario_id}", response_model=list[schemas.PerguntaOut])
+@router.get("/formulario/{formulario_id}", response_model=List[PerguntaComOpcoes])
 def listar_perguntas_por_formulario(formulario_id: int, db: Session = Depends(get_db)):
-    perguntas = db.query(models.Pergunta).filter(models.Pergunta.formulario_id == formulario_id).all()
-    return perguntas
+    return db.query(Pergunta).filter(Pergunta.formulario_id == formulario_id).all()
+
 
 # @router.get("/{formulario_id}/perguntas", response_model=List[schemas.PerguntaOut])
 # def listar_perguntas(
