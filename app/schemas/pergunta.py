@@ -7,7 +7,7 @@ class PerguntaBase(BaseModel):
     titulo: str
     codigo: str
     orientacao_resposta: Optional[str]
-    tipo_pergunta: str
+    tipo: str
     obrigatoria: bool
     ordem: int
     sub_pergunta: bool

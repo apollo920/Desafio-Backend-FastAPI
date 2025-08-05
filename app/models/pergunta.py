@@ -12,9 +12,9 @@ class Pergunta(Base):
     ordem = Column(Integer)
     obrigatoria = Column(Boolean)
     sub_pergunta = Column(Boolean)
-    tipo_pergunta = Column(String)
+    tipo = Column(String, index=True)
 
     formulario_id = Column(Integer, ForeignKey("formularios.id"), nullable=False)
-    formulario = relationship("Formulario", back_populates="perguntas")
+    formulario = relationship("Formulario", back_populates="pergunta")
 
     opcoes = relationship("OpcaoResposta", back_populates="pergunta", cascade="all, delete-orphan")

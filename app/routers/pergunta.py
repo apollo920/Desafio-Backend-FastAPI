@@ -11,7 +11,11 @@ from app.models.formulario import Formulario
 from app.models.formulario import Formulario
 
 
-router = APIRouter()
+router = APIRouter(
+    prefix="/pergunta",
+    tags=["Pergunta"],
+    responses={404: {"description": "Not found"}},
+)
 
 
 def get_db():
