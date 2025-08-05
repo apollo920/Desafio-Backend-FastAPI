@@ -7,8 +7,8 @@ class OpcaoResposta(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     id_pergunta = Column(Integer, ForeignKey("pergunta.id"))
-    resposta = Column(String)
+    resposta = Column(String, nullable=False)
     ordem = Column(Integer)
-    resposta_aberta = Column(Boolean)
+    resposta_aberta = Column(Boolean, default=False)
 
     pergunta = relationship("Pergunta", back_populates="opcoes")

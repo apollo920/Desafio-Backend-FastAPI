@@ -10,4 +10,4 @@ class Formulario(Base):
     descricao = Column(String)
     ordem = Column(Integer)
 
-    perguntas = relationship("Pergunta", back_populates="formulario", cascade="all, delete-orphan")
+    pergunta = relationship("Pergunta", back_populates="formulario", cascade="all, delete-orphan")
