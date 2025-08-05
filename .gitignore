@@ -25,6 +25,9 @@ alembic/versions/__pycache__/
 # MyPy
 .mypy_cache/
 
+#Py_cache
+.__pycache__/
+
 # macOS
 .DS_Store
 
