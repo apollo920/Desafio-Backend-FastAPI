@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from fastapi import FastAPI
 from app.database import Base, engine
 from app.routers import formulario, pergunta
@@ -11,4 +14,4 @@ Base.metadata.create_all(bind=engine)
 
 @app.get("/")
 def root():
-    return {"mensagem: " "API de Formulários Dinâmicos rodando com sucesso!"}
+    return {"mensagem": "API de Formulários Dinâmicos rodando com sucesso!"}
